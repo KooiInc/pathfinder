@@ -1,5 +1,17 @@
 {
-  "dependencies": {
-    "esbuild": "^0.14.42"
-  }
+  "name": "js-pathfinder",
+  "version": "0.5.0",
+  "description": "Path utility for objects",
+  "main": "./src/PathFinder.js",
+  "devDependencies": {
+    "esbuild": "~0.14.28"
+  },
+  "scripts": {
+    "build": "node build"
+  },
+  "keywords": [
+    "Object", "Path"
+  ],
+  "author": "KooiInc/NICon",
+  "license": "ISC"
 }
