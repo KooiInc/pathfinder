@@ -1,0 +1,77 @@
+{
+  "time": "UTC",
+  "class": "Finals",
+  "testArray": [
+    {
+      "some": {
+        "a": 1,
+        "b": 2,
+        "c": "I am some.c#1"
+      }
+    },
+    {
+      "some": {
+        "a": 2,
+        "b": 3,
+        "c": "I am some.c#2"
+      }
+    },
+    {
+      "some": [
+        {
+          "a": 3,
+          "b": 4,
+        "c": "I am some.c#3"
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "c": "I am some.c#4"
+        }
+      ]
+    }
+  ],
+  "data": {
+    "message": {
+      "content": "some content",
+      "details": {
+        "lastGreeting": true
+      }
+    },
+    "school": "yaba",
+    "age": "tolu",
+    "names": [
+      "darious"
+    ],
+    "area": {
+      "NY": true,
+      "BG": true,
+      "CA": {
+        "name": {
+          "noName": null,
+          "isNotFalse": false,
+          "characteristics": {
+            "color": {
+              "day": "yellow",
+              "night": "gray",
+              "colors": {
+                "yellow": "#FFFF00",
+                "gray": [
+                  {
+                    "light": "#EEE"
+                  },
+                  {
+                    "darker": "#999"
+                  },
+                  {
+                    "darkest": "#555"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

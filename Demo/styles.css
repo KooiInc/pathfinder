@@ -1,0 +1,24 @@
+body {
+  font: normal 12px/15px Lato, verdana, arial;
+  margin: 2rem;
+}
+
+code {
+  color: green;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+code.cmd {
+  background-color: #DDD;
+  padding: 2px;
+}
+
+.logEntry {
+  color: #333;
+  display: block;
+  min-height: 1rem;
+}
+
+code.pre {
+  white-space: pre-wrap;
+}
