@@ -2,7 +2,7 @@ import { Logger } from "./Helpers.js";
 
 // MODULE for retrieving paths/values (to and from)
 // pathTo, fromPath are  Symbols, associated with Object.prototype
-import { pathTo, fromPath, } from "../Dist/PathFinder.min.js";
+import { pathTo, fromPath, } from "../src/PathFinder.js";
 // TESTDATA FROM JSON
 const testData = await fetch("./Data.json").then(r => r.json());
 const log = Logger();
