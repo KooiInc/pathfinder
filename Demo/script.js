@@ -22,7 +22,7 @@ log(`\n<b>A search with value null for the existing path ${
     testData[pathTo(`noName`)]);
     
 // testDate is from json, which can not contain undefined values, so set it first for demonstration
-testData.data.area.CA.name.isDefined = undefined;
+testData.data["area"]["CA"].name.isDefined = undefined;
 log(`\nAfter ${toCodeCmd(`testData.data.area.CA.name.isDefined = undefined;`)}`);
 log(`<b>A search with no value (undefined) for the existing path ${
     toCodeCmd(`testData[pathTo(\`isDefined\`)]`)}</b> =>`, 
