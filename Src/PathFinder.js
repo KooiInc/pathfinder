@@ -6,7 +6,7 @@ const checkArray = (shouldCheck, value) => shouldCheck && Array.isArray(value) &
 const noValue = `no value (undefined)`;
 const invObj = `None. Invalid Object instance`;
 const yn = addMethod2Prototype(Boolean, function() { return !this.valueOf() ? `NO` : `YES`; } );
-const createReturnValue = (path = `n/a`, exists = false[yn], value = noValue) => ({path, exists: exists[yn], value});
+const createReturnValue = (path = `n/a`, exists = false[yn], value = noValue) => ({searchPath: path, exists: exists[yn], value});
 const validObj = obj => !Array.isArray(obj) && Object.keys(obj).length;
 const extTo = (me, key) => validObj(me) && findPathForKey(me, key) || { searchKey: key, pathFound: invObj, value: `n/a`};
 const extFrom = (me, path) => validObj(me) && getValueFromPath(me, path) || createReturnValue(path, false, `n/a`);
