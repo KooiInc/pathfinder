@@ -1,4 +1,4 @@
-const addMethod2Prototype = await doImport("//kooiinc.github.io/ProtoXT/protoxt.js");
+const addMethod2Prototype = await import("//kooiinc.github.io/ProtoXT/protoxt.js").then(r => `default` in r ? r.default : r);
 const cleanPath = path => /^[/.]/.test(path) ? path.slice(1) : path;
 const splitPath = path => (cleanPath(path)).split(/[/.]/);
 const isObj = o => Object.getPrototypeOf(o || 0).constructor === Object;
@@ -80,8 +80,4 @@ function findPathForKey(initialObj, key) {
   }
 
   return loop(initialObj, key);
-}
-
-async function doImport(from) {
-  return await import(from).then(r => `default` in r ? r.default : r);
 }
