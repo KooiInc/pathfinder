@@ -1,8 +1,8 @@
 {
   "name": "js-pathfinder",
-  "version": "0.5.9",
+  "version": "0.6.0",
   "description": "Path utility for objects",
-  "main": "./src/PathFinder.js",
+  "main": "./Src/PathFinder.js",
   "devDependencies": {
     "esbuild": "~0.14.28"
   },
@@ -12,6 +12,10 @@
   "keywords": [
     "Object", "Path"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KooiInc/pathfinder"
+  },
   "author": "KooiInc/NICon",
   "license": "ISC"
 }
