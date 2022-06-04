@@ -4,7 +4,7 @@ const splitPath = path => (cleanPath(path)).split(/[/.]/);
 const isObj = o => Object.getPrototypeOf(o || 0).constructor === Object;
 const checkArray = (shouldCheck, value) => shouldCheck && Array.isArray(value) && !!value.find(v => v.constructor && v.constructor === Object);
 const noValue = `no value (undefined)`;
-const invObj = `None. Invalid Object instance`;
+const invObj = `None. Object instance not suitable`;
 const yn = addMethod2Prototype(Boolean, function() { return !this.valueOf() ? `NO` : `YES`; } );
 const createReturnValue = (path = `n/a`, exists = false[yn], value = noValue) => ({searchPath: path, exists: exists[yn], value});
 const validObj = obj => !Array.isArray(obj) && Object.keys(obj).length;
