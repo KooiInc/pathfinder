@@ -1,6 +1,6 @@
 {
   "name": "js-pathfinder",
-  "version": "0.5.0",
+  "version": "0.5.9",
   "description": "Path utility for objects",
   "main": "./src/PathFinder.js",
   "devDependencies": {
