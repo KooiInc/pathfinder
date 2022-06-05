@@ -1,6 +1,6 @@
 {
   "name": "js-pathfinder",
-  "version": "0.6.1",
+  "version": "0.6.5",
   "description": "Path utility for objects",
   "browser": "./Src/PathFinder.js",
   "dependencies": {
@@ -10,7 +10,7 @@
     "build": "node build"
   },
   "keywords": [
-    "Object", "Path"
+    "Ecmascript", "Object", "Path"
   ],
   "repository": {
     "type": "git",
