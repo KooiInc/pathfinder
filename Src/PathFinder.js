@@ -1,17 +1,17 @@
-const addMethod2Prototype = await import("//kooiinc.github.io/ProtoXT/protoxt.js").then(r => `default` in r ? r.default : r);
+const {addExtensionFn: protoX} = await import("//kooiinc.github.io/ProtoXT/protoxt.js");
 const cleanPath = path => /^[/.]/.test(path) ? path.slice(1) : path;
 const splitPath = path => (cleanPath(path)).split(/[/.]/);
 const isObj = o => Object.getPrototypeOf(o || 0).constructor === Object;
 const checkArray = (shouldCheck, value) => shouldCheck && Array.isArray(value) && !!value.find(v => v.constructor && v.constructor === Object);
 const noValue = `no value (undefined)`;
 const invObj = `None. Object instance not suitable`;
-const yn = addMethod2Prototype(Boolean, function() { return !this.valueOf() ? `NO` : `YES`; } );
+const yn = protoX(function() { return !this.valueOf() ? `NO` : `YES`; } ).To(Boolean);
 const createReturnValue = (path = `n/a`, exists = false[yn], value = noValue) => ({searchPath: path, exists: exists[yn], value});
 const validObj = obj => !Array.isArray(obj) && Object.keys(obj).length;
 const extTo = (me, key) => validObj(me) && findPathForKey(me, key) || { searchKey: key, pathFound: invObj, value: `n/a`};
 const extFrom = (me, path) => validObj(me) && getValueFromPath(me, path) || createReturnValue(path, false, `n/a`);
-const pathTo = addMethod2Prototype(Object, extTo);
-const fromPath = addMethod2Prototype(Object, extFrom)
+const pathTo = protoX(extTo).To(Object);
+const fromPath = protoX(extFrom).To(Object);
 
 export { pathTo, fromPath, };
 
