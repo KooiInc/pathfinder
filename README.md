@@ -1,7 +1,9 @@
 # Pathfinder
 JS Object path helper
 
-Object extension (safe: as Symbol, uses [ProtoXT](https://github.com/KooiInc/ProtoXT)).
+Object extension (safe: as 
+[`Symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol), 
+uses [ProtoXT](https://github.com/KooiInc/ProtoXT)).
 
 Find the path for a key in an Object, or find a value from a given Object path.
 
