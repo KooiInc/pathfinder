@@ -11,12 +11,10 @@ const lastGreetingPath = testData[pathTo(`lastGreeting`)];
 log(`${ toCodeCmd( `testData[pathTo(\`lastGreeting\`)]`) } =>`, lastGreetingPath);
 const yellowPath = testData[pathTo(`yellow`)];
 log(`----\n`, `${toCodeCmd(`testData[pathTo(\`yellow\`)]`)} =>`, yellowPath);
-
-log(`\n<b>Retrieving the value from the found path result ${toCodeCmd(`yellowPath.value`)}</b> =>`, yellowPath.value);
-
-log(`\n<b>A search w/o result ${toCodeCmd(`testData[pathTo(\`noDice\`)]`)}</b> =>`, 
+log(`\n<b>Retrieving the value from the found path result ${toCodeCmd(`testData[pathTo(\`yellow\`)].value`)}</b> =>`,
+  yellowPath.value);
+log(`\n<b>A search w/o result ${toCodeCmd(`testData[pathTo(\`noDice\`)]`)}</b> =>`,
     testData[pathTo(`noDice`)]);
-
 log(`\n<b>A search with value null for the existing path ${
       toCodeCmd(`testData[pathTo(\`noName\`)]`)}</b> =>`,
     testData[pathTo(`noName`)]);
