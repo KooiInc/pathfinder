@@ -4,7 +4,7 @@
   "description": "Path utility for objects",
   "browser": "./Src/PathFinder.js",
   "dependencies": {
-    "esbuild": "~0.14.28"
+    "esbuild": "~0.15.11"
   },
   "scripts": {
     "build": "node build"
