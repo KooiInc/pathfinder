@@ -16,9 +16,29 @@ code.cmd {
 .logEntry {
   color: #333;
   display: block;
-  min-height: 1rem;
+  line-height: 1rem;
+}
+
+details {
+  color: red;
+
+  > summary span {
+    color: green;
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
 
 code.pre {
   white-space: pre-wrap;
+}
+
+.container {
+  position: absolute;
+  inset: 0;
+
+  .demo {
+    max-width: 800px;
+    margin: 0 auto;
+  }
 }

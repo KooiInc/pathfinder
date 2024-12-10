@@ -1,21 +1,51 @@
-const {addExtensionFn: protoX} = await import("//kooiinc.github.io/ProtoXT/protoxt.js");
 const cleanPath = path => /^[/.]/.test(path) ? path.slice(1) : path;
 const splitPath = path => (cleanPath(path)).split(/[/.]/);
 const isObj = o => Object.getPrototypeOf(o || 0).constructor === Object;
 const checkArray = (shouldCheck, value) => shouldCheck && Array.isArray(value) && !!value.find(v => v.constructor && v.constructor === Object);
 const noValue = `no value (undefined)`;
 const invObj = `None. Object instance not suitable`;
-const yn = protoX(function() { return !this.valueOf() ? `NO` : `YES`; } ).To(Boolean);
 const createReturnValue = (path = `n/a`, exists = false[yn], value = noValue) => ({searchPath: path, exists: exists[yn], value});
 const validObj = obj => !Array.isArray(obj) && Object.keys(obj).length;
-const extTo = (me, key) => validObj(me) && findPathForKey(me, key) || { searchKey: key, pathFound: invObj, value: `n/a`};
-const extFrom = (me, path) => validObj(me) && getValueFromPath(me, path) || createReturnValue(path, false, `n/a`);
-const pathTo = protoX(extTo).To(Object);
-const fromPath = protoX(extFrom).To(Object);
+const { pathTo, fromPath, yn } = extendSymbolic();
 
-export { pathTo, fromPath, };
+export { pathTo, fromPath };
 
-function getValueFromPath( object2Search, pathString, searchArraysForPathInObjects = false, returnFoundObjectFromArrayIfPathFoundWithin = false ) {
+function extendSymbolic() {
+  Symbol.to =Symbol.for(`pathTo`);
+  Symbol.from =Symbol.for(`pathFrom`);
+  Symbol.yn = Symbol.for(`yn`)
+  
+  Object.defineProperties(Boolean.prototype, {
+    [Symbol.yn]: { value: yn, enumerable: false, },
+  })
+  
+  Object.defineProperties(Object.prototype, {
+    [Symbol.to]: { value: function(key) { return extTo(this, key); }, enumerable: false },
+    [Symbol.from]: { value: function(key) { return extFrom(this, key); }, enumerable: false },
+  });
+  
+  return { pathTo: Symbol.to, fromPath: Symbol.from, yn: Symbol.yn };
+  
+  function extTo(target, key) {
+    return validObj(target) && findPathForKey(target, key) || {
+      searchKey: key,
+      pathFound: invObj,
+      value: `n/a`
+    };
+  }
+  
+  function extFrom(target, path) {
+    return validObj(target) && getValueFromPath(target, path) || createReturnValue(path, false, `n/a`);
+  }
+  
+  function yn() { return !this.valueOf() ? `NO` : `YES`; }
+}
+
+function getValueFromPath(
+    object2Search,
+    pathString,
+    searchArraysForPathInObjects = false,
+    returnFoundObjectFromArrayIfPathFoundWithin = false ) {
   const iPath = splitPath(pathString);
   const exists = currentObj => {
     const current = iPath.shift();
