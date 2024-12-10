@@ -1,13 +1,13 @@
 # Pathfinder
-JS Object path helper
+
+## ECMAScript Object path helper
 
 Object extension (safe: as 
-[`Symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol), 
-uses [ProtoXT](https://github.com/KooiInc/ProtoXT)).
+[`Symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol).
 
-Find the path for a key in an Object, or find a value from a given Object path.
+Find the path for a key in an `Object`, or find a value from a given `Object` path.
 
-The [demo](https://kooiinc.github.io/pathfinder/Demo/) should give you an idea ...
+The [demonstration page](https://kooiinc.github.io/pathfinder/Demo/) should give you an idea ...
 
 ### CDN/NPM: 
 - Minified: [https://cdn.jsdelivr.net/gh/KooiInc/pathfinder@latest/Dist/Pathfinder.min.js](https://cdn.jsdelivr.net/gh/KooiInc/pathfinder@latest/Dist/Pathfinder.min.js)
