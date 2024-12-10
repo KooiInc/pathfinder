@@ -3,7 +3,7 @@
 ## ECMAScript Object path helper
 
 Object extension (safe: as 
-[`Symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol).
+[`Symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)).
 
 Find the path for a key in an `Object`, or find a value from a given `Object` path.
 
