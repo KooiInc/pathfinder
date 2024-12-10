@@ -40,5 +40,23 @@ code.pre {
   .demo {
     max-width: 800px;
     margin: 0 auto;
+    padding: 1rem 0 2rem 0;
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a[target]::before {
+      color: rgba(0, 0, 238, 0.7);
+      font-size: 1.1rem;
+      padding-right: 2px;
+      vertical-align: baseline;
+    }
+
+    a[target="_top"]::before {
+      content: "↺";
+    }
+
   }
 }
