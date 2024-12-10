@@ -1,13 +1,10 @@
 {
   "name": "js-pathfinder",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Path utility for objects",
   "browser": "./Src/PathFinder.js",
   "dependencies": {
     "esbuild": "latest"
-  },
-  "scripts": {
-    "build": "node build_continuous.js"
   },
   "keywords": [
     "Ecmascript", "Object", "Path"
